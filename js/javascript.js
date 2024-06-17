@@ -69,3 +69,5 @@ function playGame() {
 
     return `Final Score: Human = ${humanScore} vs. Computer = ${computerScore}`;
 }
+
+console.log(playGame());
