@@ -34,5 +34,21 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-
+    if (humanChoice === computerChoice) {
+        return `It's a tie! Both are ${humanChoice}`;
+    } else if (
+        (humanChoice === "Scissors" && computerChoice === "Paper") ||
+        (humanChoice === "Paper" && computerChoice === "Rock") ||
+        (humanChoice === "Rock" && computerChoice === "Scissors")
+            ) {
+        return `You win! ${humanChoice} beats ${computerChoice}!`;
+        humanScore++;
+    } else if (
+        (humanChoice === "Scissors" && computerChoice === "Rock") ||
+        (humanChoice === "Paper" && computerChoice === "Scissors") ||
+        (humanChoice === "Rock" && computerChoice === "Paper")
+            ) {
+        return `You lose! ${computerChoice} beats ${humanChoice}!`;
+        computerScore++;
+    }
 }
