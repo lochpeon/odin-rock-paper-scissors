@@ -23,19 +23,16 @@ function getRandomChoice() {
 
 function getHumanChoice() {
     let choice = prompt("Choose between Rock, Paper, or Scissors", getRandomChoice());
-    switch (choice) {
-        case "Rock":
+    switch (choice.toLowerCase()) {
         case "rock":
             return "Rock";
-        case "Paper":
         case "paper":
             return "Paper";
-        case "Scissors":
         case "scissors":
             return "Scissors";
     }
 }
 
 function playRound(humanChoice, computerChoice) {
-    
+
 }
