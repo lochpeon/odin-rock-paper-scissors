@@ -2,6 +2,14 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
+    return getRandomChoice();
+}
+
+function getRandomNumber() {
+    return Math.floor(Math.random() * 3);
+}
+
+function getRandomChoice() {
     let choice = getRandomNumber();
     switch (choice) {
         case 0: 
@@ -13,12 +21,8 @@ function getComputerChoice() {
     }
 }
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * 3);
-}
-
 function getHumanChoice() {
-    let choice = prompt("Choose between Rock, Paper, or Scissors", "Rock");
+    let choice = prompt("Choose between Rock, Paper, or Scissors", getRandomChoice());
     switch (choice) {
         case "Rock":
         case "rock":
