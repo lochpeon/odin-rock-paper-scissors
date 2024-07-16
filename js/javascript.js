@@ -19,7 +19,7 @@ function getRandomChoice() {
 }
 
 function getHumanChoice() {
-    let choice = prompt("Choose between Rock, Paper, or Scissors", getRandomChoice());
+    // let choice = prompt("Choose between Rock, Paper, or Scissors", getRandomChoice());
     switch (choice.toLowerCase()) {
         case "rock":
             return "Rock";
@@ -55,19 +55,19 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    for (i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+    // for (i = 0; i < 5; i++) {
+    //     const humanSelection = getHumanChoice();
+    //     const computerSelection = getComputerChoice();
         
-        let response = playRound(humanSelection, computerSelection);
-        if (response === humanSelection) {
-            humanScore++;
-        } else if (response === computerSelection) {
-            computerScore++;
-        }
-    }
+    //     let response = playRound(humanSelection, computerSelection);
+    //     if (response === humanSelection) {
+    //         humanScore++;
+    //     } else if (response === computerSelection) {
+    //         computerScore++;
+    //     }
+    // }
 
-    return `Final Score: Human = ${humanScore} vs. Computer = ${computerScore}`;
+    // return `Final Score: Human = ${humanScore} vs. Computer = ${computerScore}`;
 }
 
-console.log(playGame());
+// console.log(playGame());
