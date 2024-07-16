@@ -51,23 +51,22 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
+const buttons = document.querySelectorAll("button");
+let humanScore = 0;
+let computerScore = 0;
 
-    // for (i = 0; i < 5; i++) {
-    //     const humanSelection = getHumanChoice();
-    //     const computerSelection = getComputerChoice();
-        
-    //     let response = playRound(humanSelection, computerSelection);
-    //     if (response === humanSelection) {
-    //         humanScore++;
-    //     } else if (response === computerSelection) {
-    //         computerScore++;
-    //     }
-    // }
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const humanSelection = button.id;
+        const computerSelection = getComputerChoice();
 
-    // return `Final Score: Human = ${humanScore} vs. Computer = ${computerScore}`;
-}
+        let response = playRound(humanSelection, computerSelection);
+        if (response === humanSelection) {
+            humanScore++;
+        } else if (response === computerSelection) {
+            computerScore++;
+        }
 
-// console.log(playGame());
+        console.log(`Current Score: Human = ${humanScore} vs. Computer = ${computerScore}`);
+    });
+});
