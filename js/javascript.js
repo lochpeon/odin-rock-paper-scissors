@@ -16,26 +16,33 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log (`It's a tie! Both are ${humanChoice}`);
+        roundResult.textContent = `It's a tie! Both are ${humanChoice}`;
         return "tie";
     } else if (
         (humanChoice === "Scissors" && computerChoice === "Paper") ||
         (humanChoice === "Paper" && computerChoice === "Rock") ||
         (humanChoice === "Rock" && computerChoice === "Scissors")
-            ) {
-        console.log (`You win! ${humanChoice} beats ${computerChoice}!`);
+        ) {
+        roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
         return humanChoice;
     } else if (
         (humanChoice === "Scissors" && computerChoice === "Rock") ||
         (humanChoice === "Paper" && computerChoice === "Scissors") ||
         (humanChoice === "Rock" && computerChoice === "Paper")
-            ) {
-        console.log (`You lose! ${computerChoice} beats ${humanChoice}!`);
+        ) {
+        roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
         return computerChoice;
     }
 }
 
 const buttons = document.querySelectorAll("button");
+const resultSection = document.querySelector("#results");
+const roundResult = document.createElement("p");
+const totalResult = document.createElement("p");
+
+resultSection.appendChild(roundResult);
+resultSection.appendChild(totalResult);
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -51,6 +58,6 @@ buttons.forEach((button) => {
             computerScore++;
         }
 
-        console.log(`Current Score: Human = ${humanScore} vs. Computer = ${computerScore}`);
+        totalResult.textContent = ` Current Score: Human = ${humanScore} vs. Computer = ${computerScore}`;
     });
 });
