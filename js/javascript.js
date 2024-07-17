@@ -36,7 +36,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 const buttons = document.querySelectorAll("button");
-const resultSection = document.querySelector("#results");
+const resultSection = document.querySelector("#resultSection");
 const roundResult = document.createElement("p");
 const totalResult = document.querySelector("#totalResult");
 
