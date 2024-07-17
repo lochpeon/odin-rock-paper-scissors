@@ -58,6 +58,6 @@ buttons.forEach((button) => {
             computerScore++;
         }
 
-        totalResult.textContent = ` Current Score: Human = ${humanScore} vs. Computer = ${computerScore}`;
+        totalResult.textContent = `Human = ${humanScore} vs. Computer = ${computerScore}`;
     });
 });
