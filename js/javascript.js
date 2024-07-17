@@ -38,10 +38,9 @@ function playRound(humanChoice, computerChoice) {
 const buttons = document.querySelectorAll("button");
 const resultSection = document.querySelector("#results");
 const roundResult = document.createElement("p");
-const totalResult = document.createElement("p");
+const totalResult = document.querySelector("#totalResult");
 
 resultSection.appendChild(roundResult);
-resultSection.appendChild(totalResult);
 
 let humanScore = 0;
 let computerScore = 0;
