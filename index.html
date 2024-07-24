@@ -9,17 +9,33 @@
 </head>
 <body>
     <header>
-        <h1>Rock Paper Scissors</h1>
+        <ul>
+            <li class="header-logo">Let&rsquo;s play</li>
+            <li class="header-link">rock</li>
+            <li class="header-link">paper</li>
+            <li class="header-link">scissors</li>
+        </ul>
     </header>
 
-    <section id="choicesSection">
-        <button id="Rock">🪨</button>
-        <button id="Paper">📄</button>
-        <button id="Scissors">✂️</button>
-    </section>
-    
-    <section id="resultSection">
-        <p id="totalResult">Human = 0 vs. Computer = 0</p>
-    </section>
+    <main>
+        <section id="choicesSection">
+            <button id="Rock">🪨</button>
+            <button id="Paper">📄</button>
+            <button id="Scissors">✂️</button>
+        </section>
+        
+        <section id="resultSection">
+            <div id="totalResult">
+                <div>Human 
+                    <span class="score human">0</span>
+                </div>
+                <div>
+                    <span class="score computer">0</span>
+                    Computer
+                </div>
+            </div>
+            <p id="roundResult">Click on any of the choices to start.</p>
+        </section>
+    </main>
 </body>
 </html>
