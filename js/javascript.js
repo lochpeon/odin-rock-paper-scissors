@@ -14,6 +14,19 @@ function getComputerChoice() {
     }
 }
 
+function isThereAWinner(humanScore, computerScore) {
+    getWinner();
+    return (humanScore >= 5 || computerScore >= 5);
+}
+
+function getWinner() {
+    if (humanScore >= 5) {
+        return "Human";
+    } else {
+        return "Computer";
+    }
+}
+
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         roundResult.textContent = `It's a tie! Both are ${humanChoice}`;
@@ -37,8 +50,9 @@ function playRound(humanChoice, computerChoice) {
 
 const buttons = document.querySelectorAll("button");
 const resultSection = document.querySelector("#resultSection");
-const roundResult = document.createElement("p");
-const totalResult = document.querySelector("#totalResult");
+const roundResult = document.querySelector("#roundResult");
+const resultHuman = document.querySelector(".score.human");
+const resultComputer = document.querySelector(".score.computer");
 
 resultSection.appendChild(roundResult);
 
@@ -52,11 +66,18 @@ buttons.forEach((button) => {
 
         let response = playRound(humanSelection, computerSelection);
         if (response === humanSelection) {
-            humanScore++;
+            resultHuman.textContent = ++humanScore;
         } else if (response === computerSelection) {
-            computerScore++;
+            resultComputer.textContent = ++computerScore;
         }
 
-        totalResult.textContent = `Human = ${humanScore} vs. Computer = ${computerScore}`;
+        if(isThereAWinner(humanScore, computerScore)) {
+            buttons.forEach((btn) => {
+                btn.disabled = true;
+            });
+
+            roundResult.textContent = `Game over. ${getWinner()} wins.`;
+        }
+        
     });
 });
